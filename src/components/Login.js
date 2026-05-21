@@ -11,7 +11,7 @@ function Login({ setPagina }) {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/token/', datos);
+      const response = await axios.post('https://nexopyme.onrender.com', datos);
       localStorage.setItem('token', response.data.access);
       setMensaje('¡Login exitoso!');
       setTimeout(() => setPagina('inicio'), 1500);

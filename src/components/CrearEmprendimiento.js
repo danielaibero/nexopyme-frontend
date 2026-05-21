@@ -13,7 +13,7 @@ function CrearEmprendimiento({ setPagina }) {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://127.0.0.1:8000/api/emprendimientos/crear/', datos);
+      await axios.post('https://nexopyme.onrender.com/api/emprendimientos/crear/', datos);
       setMensaje('¡Emprendimiento creado exitosamente!');
       setTimeout(() => setPagina('inicio'), 2000);
     } catch (error) {

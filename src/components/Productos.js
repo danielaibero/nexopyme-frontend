@@ -5,7 +5,7 @@ function Productos({ setPagina, setProductoSeleccionado }) {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/productos/listar/')
+    axios.get('https://nexopyme.onrender.com/api/productos/listar/')
       .then(response => setProductos(response.data))
       .catch(error => console.log('Error:', error));
   }, []);
