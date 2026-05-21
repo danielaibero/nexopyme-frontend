@@ -12,13 +12,14 @@ function Registro() {
     setDatos({ ...datos, [e.target.name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     try {
-      await axios.post('http://127.0.0.1:8000/api/usuarios/registro/', datos);
+      await axios.post('https://nexopyme.onrender.com/api/usuarios/registro/', datos, {
+        headers: { 'Content-Type': 'application/json' }
+      });
       setMensaje('¡Registro exitoso!');
     } catch (error) {
-      setMensaje('Error al registrarse');
+      setMensaje('Error: ' + JSON.stringify(error.response?.data));
     }
   };
 
